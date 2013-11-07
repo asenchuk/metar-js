@@ -1,0 +1,20 @@
+{
+  "name": "metar-js",
+  "version": "0.0.1",
+  "description": "METAR weather information parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taviscaron/metar-js.git"
+  },
+  "keywords": [
+    "METAR",
+    "airport",
+    "weather"
+  ],
+  "author": "Andrei Senchuk",
+  "license": "MIT"
+}
