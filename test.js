@@ -1,1 +1,0 @@
-var metar = require('./index');
