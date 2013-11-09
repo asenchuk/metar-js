@@ -8,7 +8,7 @@ var uuww = metar.parseMetar('UUWW 081400Z 19003MPS CAVOK 05/02 Q1012 19000070 NO
 var uudd = metar.parseMetar('UUDD 081400Z 25002MPS 220V300 CAVOK 05/02 Q1012 32010095 82010095 NOSIG');
 
 exports.testMessageTypeParsing = function(test) {
-  	test.equal(umms.type, 'METAR');
+	test.equal(umms.type, 'METAR');
 	test.equal(ummm.type, 'METAR');
 	test.equal(ummg.type, 'METAR');
 	test.equal(uuee.type, 'METAR');
