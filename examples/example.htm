@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>metar-js example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../lib/metar.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#parseButton').click(function() {
+          var message = $('#source').val();
+          var metar = parseMetar(message);
+          if(!!metar) {
+            $('#dest').val(JSON.stringify(metar, null, 4));
+          } else {
+            $('#dest').val("Can't parse message. Is that really METAR? :)");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div style="padding: 5px"><textarea id="source" style="width:600px; height: 100px"></textarea></div>
+    <div style="padding: 5px"><input type="button" id="parseButton" value="Parse"/></div>
+    <div style="padding: 5px"><textarea id="dest" style="width:600px; height: 300px"></textarea></div>
+  </body>
+</html>
