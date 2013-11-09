@@ -67,3 +67,147 @@ exports.testVisibilityParsing = function(test) {
 	
 	test.done();
 };
+
+exports.testWeatherParsing = function(test) {
+	test.equal(umms.weather.length, 1);
+	test.equal(umms.weather[0].intensity, '-');
+	test.equal(umms.weather[0].descriptor, undefined);
+	test.equal(umms.weather[0].condition, 'RA');
+	
+	test.equal(ummm.weather.length, 1);
+	test.equal(ummm.weather[0].intensity, '-');
+	test.equal(ummm.weather[0].descriptor, 'SH');
+	test.equal(ummm.weather[0].condition, 'RA');
+	
+	test.equal(ummg.weather.length, 1);
+	test.equal(ummg.weather[0].intensity, '-');
+	test.equal(ummg.weather[0].descriptor, 'SH');
+	test.equal(ummg.weather[0].condition, 'RA');
+	
+	test.equal(uuee.weather, undefined);
+	test.equal(uuww.weather, undefined);
+	test.equal(uudd.weather, undefined);
+	
+	test.done();
+};
+
+exports.testCloudsParsing = function(test) {
+	test.equal(umms.clouds.length, 1);
+	test.equal(umms.clouds[0].code, 'OVC');
+	test.equal(umms.clouds[0].base, 30);
+	
+	test.equal(ummm.clouds.length, 2);
+	test.equal(ummm.clouds[0].code, 'BKN');
+	test.equal(ummm.clouds[0].base, 18);
+	test.equal(ummm.clouds[0].descriptor, 'CB');
+	test.equal(ummm.clouds[1].code, 'OVC');
+	test.equal(ummm.clouds[1].base, 100);
+	
+	test.equal(ummg.clouds.length, 2);
+	test.equal(ummg.clouds[0].code, 'BKN');
+	test.equal(ummg.clouds[0].base, 30);
+	test.equal(ummg.clouds[0].descriptor, 'CB');
+	test.equal(ummg.clouds[1].code, 'OVC');
+	test.equal(ummg.clouds[1].base, 66);
+	
+	test.equal(uuee.clouds, undefined);
+	test.equal(uuww.clouds, undefined);
+	test.equal(uudd.clouds, undefined);
+	
+	test.done();
+};
+
+exports.testTemperatureParsing = function(test) {
+	test.equal(umms.temperature, 7);
+	test.equal(umms.dewPoint, 6);
+	
+	test.equal(ummm.temperature, 7);
+	test.equal(ummm.dewPoint, 6);
+	
+	test.equal(ummg.temperature, 8);
+	test.equal(ummg.dewPoint, 7);
+	
+	test.equal(uuee.temperature, 5);
+	test.equal(uuee.dewPoint, 3);
+	
+	test.equal(uuww.temperature, 5);
+	test.equal(uuww.dewPoint, 2);
+	
+	test.equal(uudd.temperature, 5);
+	test.equal(uudd.dewPoint, 2);
+	
+	test.done();
+};
+
+exports.testQNHParsing = function(test) {
+	test.equal(umms.qnh, 1013);
+	test.equal(ummm.qnh, 1012);
+	test.equal(ummg.qnh, 1012);
+	test.equal(uuee.qnh, 1011);
+	test.equal(uuww.qnh, 1012);
+	test.equal(uudd.qnh, 1012);
+	
+	test.done();
+};
+
+exports.testRVRParsing = function(test) {
+	test.equal(umms.rvr.length, 1);
+	test.equal(umms.rvr[0].rwy, '31');
+	test.equal(umms.rvr[0].visibility, 2900);
+	
+	test.equal(ummm.rvr.length, 1);
+	test.equal(ummm.rvr[0].rwy, '30');
+	test.equal(ummm.rvr[0].visibility, 2900);
+	
+	test.done();
+};
+
+exports.testRwyConditionsParsing = function(test) {
+	test.equal(uuee.rwyConditions.length, 2);
+	test.equal(uuee.rwyConditions[0].rwy, '25R');
+	test.equal(uuee.rwyConditions[0].state, 0);
+	test.equal(uuee.rwyConditions[0].coverage, 0);
+	test.equal(uuee.rwyConditions[0].depth, 0);
+	test.equal(uuee.rwyConditions[0].frictionCoefficient, 0.62);
+	test.equal(uuee.rwyConditions[1].rwy, '25');
+	test.equal(uuee.rwyConditions[1].state, 0);
+	test.equal(uuee.rwyConditions[1].coverage, 0);
+	test.equal(uuee.rwyConditions[1].depth, 0);
+	test.equal(uuee.rwyConditions[1].frictionCoefficient, 0.62);
+	
+	test.equal(uuww.rwyConditions.length, 1);
+	test.equal(uuww.rwyConditions[0].rwy, '19');
+	test.equal(uuww.rwyConditions[0].state, 0);
+	test.equal(uuww.rwyConditions[0].coverage, 0);
+	test.equal(uuww.rwyConditions[0].depth, 0);
+	test.equal(uuww.rwyConditions[0].frictionCoefficient, 0.70);
+	
+	test.equal(uudd.rwyConditions.length, 2);
+	test.equal(uudd.rwyConditions[0].rwy, '32');
+	test.equal(uudd.rwyConditions[0].state, 0);
+	test.equal(uudd.rwyConditions[0].coverage, 1);
+	test.equal(uudd.rwyConditions[0].depth, 0);
+	test.equal(uudd.rwyConditions[0].frictionCoefficient, 0.95);
+	test.equal(uudd.rwyConditions[1].rwy, '32R');
+	test.equal(uudd.rwyConditions[1].state, 0);
+	test.equal(uudd.rwyConditions[1].coverage, 1);
+	test.equal(uudd.rwyConditions[1].depth, 0);
+	test.equal(uudd.rwyConditions[1].frictionCoefficient, 0.95);
+	
+	test.done();
+};
+
+exports.testQFEParsing = function(test) {
+	test.equal(ummm.qfe, 986);
+	test.done();
+};
+
+exports.testForecastParsing = function(test) {
+	test.equal(umms.forecast, 'NOSIG');
+	test.equal(ummm.forecast, 'NOSIG');
+	test.equal(ummg.forecast, 'NOSIG');
+	test.equal(uuee.forecast, 'NOSIG');
+	test.equal(uuww.forecast, 'NOSIG');
+	test.equal(uudd.forecast, 'NOSIG');
+	test.done();
+};
