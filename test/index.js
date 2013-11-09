@@ -7,6 +7,16 @@ var uuee = metar.parseMetar('UUEE 081400Z 21003MPS CAVOK 05/03 Q1011 75000062 25
 var uuww = metar.parseMetar('UUWW 081400Z 19003MPS CAVOK 05/02 Q1012 19000070 NOSIG');
 var uudd = metar.parseMetar('UUDD 081400Z 25002MPS 220V300 CAVOK 05/02 Q1012 32010095 82010095 NOSIG');
 
+exports.testMessageTypeParsing = function(test) {
+  	test.equal(umms.type, 'METAR');
+	test.equal(ummm.type, 'METAR');
+	test.equal(ummg.type, 'METAR');
+	test.equal(uuee.type, 'METAR');
+	test.equal(uuww.type, 'METAR');
+	test.equal(uudd.type, 'METAR');
+	test.done();
+};
+
 exports.testAirportCodeParsing = function(test) {
 	test.equal(umms.airport, 'UMMS');
 	test.equal(ummm.airport, 'UMMM');
@@ -26,7 +36,7 @@ exports.testTimestampParsing = function(test) {
 	test.equal(ummg.hour, 13);
 	test.equal(umms.min, 0);
 	
-	test.done();
+	test.done();	
 };
 
 exports.testWindParsing = function(test) {
@@ -47,7 +57,7 @@ exports.testWindParsing = function(test) {
 	test.done();
 };
 
-exports.testVisibilityParser = function(test) {
+exports.testVisibilityParsing = function(test) {
 	test.equal(umms.visibility, 9999);
 	test.equal(ummm.visibility, 6000);
 	test.equal(ummg.visibility, 8000);
