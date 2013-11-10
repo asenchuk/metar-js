@@ -211,3 +211,9 @@ exports.testForecastParsing = function(test) {
 	test.equal(uudd.forecast, 'NOSIG');
 	test.done();
 };
+
+exports.testModifierParsing = function(test) {
+	var obj = metar.parseMetar('CWRJ 091900Z AUTO 24009KT 00/M04 RMK AO1 SLP226 T00001042 58002');
+	test.equal(obj.modifier, 'AUTO');
+	test.done();
+};
