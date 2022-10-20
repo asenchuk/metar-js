@@ -224,3 +224,9 @@ exports.testZeroHourParsing = function(test) {
 	test.equal(obj.hour, 0);
 	test.done();
 };
+
+exports.testEndOfMessageParsing = function(test) {
+	var obj = metar.parseMetar('ENBN 142020Z 17007KT 9999 -SHRA SCT029 BKN041 09/05 Q1001=');
+	test.equal(obj.qnh, 1001);
+	test.done();
+};
