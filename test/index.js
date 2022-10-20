@@ -217,3 +217,10 @@ exports.testModifierParsing = function(test) {
 	test.equal(obj.modifier, 'AUTO');
 	test.done();
 };
+
+exports.testZeroHourParsing = function(test) {
+	var obj = metar.parseMetar('ENBN 150020Z VRB04KT 9999NDV FEW040/// 09/05 Q0999=');
+	test.notEqual(obj, null);
+	test.equal(obj.hour, 0);
+	test.done();
+};
