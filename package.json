@@ -1,6 +1,6 @@
 {
   "name": "metar-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "METAR weather information parser",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,8 @@
     "weather"
   ],
   "author": "Andrei Senchuk",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodeunit": "^0.11.3"
+  }
 }
